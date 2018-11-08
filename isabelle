@@ -7,7 +7,7 @@ if [ $EXEC = "" ]; then
     VERSION=$(curl https://isabelle.in.tum.de/dist/ | grep "linux.tar.gz" | cut -d '=' -f 2 | cut -d ">" -f 1)
     wget https://isabelle.in.tum.de/dist/$VERSION
     tar -xf $VERSION
-    rm $VERSION
+    rm -f $VERSION
     EXEC=$(find . -type f -name "Isabelle*.run" | sort |  tail -n 1)
 fi
 
